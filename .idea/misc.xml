@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MyProject/MyBookShop/app/src/main/res/layout/activity_book_detail.xml" value="0.1734375" />
+        <entry key="..\:/MyProject/MyBookShop/app/src/main/res/layout/activity_bookdetail.xml" value="0.1" />
         <entry key="..\:/MyProject/MyBookShop/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/MyProject/MyBookShop/app/src/main/res/layout/content_book_detail.xml" value="0.1734375" />
+        <entry key="..\:/MyProject/MyBookShop/app/src/main/res/layout/fragment_first.xml" value="0.1734375" />
+        <entry key="..\:/MyProject/MyBookShop/app/src/main/res/layout/fragment_second.xml" value="0.1734375" />
+        <entry key="..\:/MyProject/MyBookShop/app/src/main/res/layout/recycler_row_list.xml" value="0.25" />
       </map>
     </option>
   </component>
