@@ -1,5 +1,6 @@
 package com.example.mybookshop
 
+import android.content.Intent
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -71,14 +72,14 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.OnItemClickListene
     private fun initViewModel(page:Int){
                 viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
                 viewModel.getBookList(page)
-                viewModel.getBookListObserverable().observe(this, Observer<List<Book>> {
+                viewModel.getBookListObserverable().observe(this, Observer<BookList> {
                     if (it == null) {
                         Toast.makeText(this@MainActivity, "no result found!", Toast.LENGTH_LONG)
                             .show()
                     } else {
-                        if (page > max_page && it.toMutableList().size > 0) {
+                        if (page > max_page && it.data.toMutableList().size > 0) {
                             max_page = page
-                            recyclerViewAdapter.bookList.addAll(it.toMutableList())
+                            recyclerViewAdapter.bookList.addAll(it.data.toMutableList())
                             recyclerViewAdapter.notifyDataSetChanged()
                         }
                     }
@@ -87,7 +88,9 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.OnItemClickListene
     }
 
     override fun onItemEditClick(book: Book) {
-        Toast.makeText(this,book.author + "", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, BookDetailActivity::class.java)
+        intent.putExtra("id", book.id)
+        startActivity(intent)
     }
 
 }

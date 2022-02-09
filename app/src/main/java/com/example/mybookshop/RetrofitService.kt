@@ -5,10 +5,10 @@ import retrofit2.http.*
 
 interface RetrofitService {
     @GET("books")
-    @Headers("accept:application/json","Content-Type:application/json")
-    fun getBookList(@Query("page")pageNumber:Int):Call<List<Book>>
+    @Headers("accept: application/ld+json","Content-Type:application/json")
+    fun getBookList(@Query("page")pageNumber:Int):Call<BookList>
 
-    @GET("books")
+    @GET("books/{id}")
     @Headers("accept:application/json","Content-Type:application/json")
-    fun searchBook(@Query("id")searchText: String?):Call<List<Book>>
+    fun searchBook(@Path("id")searchID: String?):Call<Book>
 }
